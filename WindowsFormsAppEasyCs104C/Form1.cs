@@ -14,12 +14,15 @@ namespace WindowsFormsAppEasyCs104C
     {
         private DataSet ds;
         private DataGridView dg;
+        private string path = "C:\\Users\\Enin\\RiderProjects\\WindowsFormsAppEasyCs104C\\WindowsFormsAppEasyCs104C\\";
         
         public Form1()
         {
             InitializeComponent();
             this.Text = "XML Viewer";
             ds = new DataSet();
+            ds.ReadXml(path + "Sample.xml");
+            
             dg = new DataGridView();
             dg.DataSource = ds.Tables[0];
             dg.Parent = this;
